@@ -1,6 +1,6 @@
---- a/configure	Wed Nov  5 15:23:14 2025
-+++ b/configure	Wed Nov  5 15:29:34 2025
-@@ -26122,14 +26122,14 @@
+--- a/configure	Wed Jan  7 10:50:59 2026
++++ b/configure	Wed Jan  7 10:52:57 2026
+@@ -26341,14 +26341,14 @@
    LDFLAGS="$LDFLAGS $SSL_LDFLAGS"
    LDFLAGSPC="$LDFLAGSPC $SSL_LDFLAGS"
  
@@ -18,7 +18,7 @@
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -26160,7 +26160,7 @@
+@@ -26379,7 +26379,7 @@
  then :
  
      HAVECRYPTO="yes"
@@ -27,7 +27,7 @@
  
  else $as_nop
  
-@@ -26175,14 +26175,14 @@
+@@ -26394,14 +26394,14 @@
      # Linking previously failed, try extra paths from --with-openssl or
      # pkg-config.  Use a different function name to avoid reusing the earlier
      # cached result.
@@ -45,7 +45,7 @@
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -26213,13 +26213,13 @@
+@@ -26432,13 +26432,13 @@
  then :
  
        HAVECRYPTO="yes"
@@ -61,7 +61,7 @@
        cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -26247,7 +26247,7 @@
+@@ -26466,7 +26466,7 @@
  
          { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking OpenSSL linking with -ldl and -lpthread" >&5
  printf %s "checking OpenSSL linking with -ldl and -lpthread... " >&6; }
@@ -70,9 +70,9 @@
          cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -26294,14 +26294,14 @@
+@@ -26513,14 +26513,14 @@
  
-   if test X"$HAVECRYPTO" = X"yes"; then
+   if test "$HAVECRYPTO" = "yes"; then
  
 -    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for SSL_connect in -lssl" >&5
 -printf %s "checking for SSL_connect in -lssl... " >&6; }
@@ -89,7 +89,7 @@
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -26309,35 +26309,35 @@
+@@ -26528,35 +26528,35 @@
  #ifdef __cplusplus
  extern "C"
  #endif
@@ -129,12 +129,12 @@
  fi
  
  
--    if test "$ac_cv_lib_ssl_SSL_connect" = yes; then
-+    if test "$ac_cv_lib_ssl_sunw_SSL_connect" = yes; then
-                    for ac_header in openssl/x509.h openssl/rsa.h openssl/crypto.h openssl/pem.h openssl/ssl.h openssl/err.h
+-    if test "$ac_cv_lib_ssl_SSL_connect" = "yes"; then
++    if test "$ac_cv_lib_ssl_sunw_SSL_connect" = "yes"; then
+                    for ac_header in openssl/rsa.h openssl/crypto.h openssl/pem.h openssl/ssl.h openssl/err.h
  do :
    as_ac_Header=`printf "%s\n" "ac_cv_header_$ac_header" | $as_tr_sh`
-@@ -29965,7 +29965,7 @@
+@@ -30360,7 +30360,7 @@
      '-llber -lldap' \
      '-lldapssl -lldapx -lldapsdk' \
      '-lldapsdk -lldapx -lldapssl' \
